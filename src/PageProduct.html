@@ -3,9 +3,265 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/dist/output.css" rel="stylesheet" />
+    <!-- Tailwind -->
+    <link href="../dist/output.css" rel="stylesheet" />
+    <!-- fontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
   </head>
   <body>
-    <h1 class="text-3xl font-bold underline text-red-400">PageProduct</h1>
+    <div class="w-screen flex flex-col space-y-5 h-screen">
+      <!-- Header -->
+      <div>
+        <!-- Top Header -->
+        <div
+          class="p-2 w-ful pr-[5%] bg-zinc-800 flex items-center justify-end"
+        >
+          <ul class="text-white flex text-md space-x-5">
+            <li><a href="">My Account</a></li>
+            <li><a href="">Wish List</a></li>
+            <li><a href="">Checkout</a></li>
+            <li><a href="">My Cart</a></li>
+          </ul>
+        </div>
+        <!-- Second Header -->
+        <div
+          class="p-5 w-ful bg-black text-white flex flex-col border-b-4 border-yellow-400 items-center"
+        >
+          <!-- Logo / Search / Contact -->
+          <div
+            class="flex w-[90%] justify-between items-center mb-5 sm:flex-col lg:flex-row sm:space-y-10"
+          >
+            <div>
+              <img class="IMGLogo" alt="Logo" />
+            </div>
+
+            <div class="flex">
+              <input
+                class="placeholder:italic placeholder:text-slate-400 block bg-black w-full border-none rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm focus:border-none InputSearch"
+                placeholder=""
+                type="text"
+                name="search"
+              />
+              <button class="bg-yellow-400 p-2 btnSearch"></button>
+            </div>
+            <div class="flex items-center">
+              <div
+                class="fa-solid fa-phone p-3 border-2 rounded-full border-white"
+              ></div>
+              <div class="ml-3">
+                <p class="">CONTACT</p>
+                <p class="tel"></p>
+              </div>
+              <div class="relative">
+                <i
+                  class="fa-solid fa-bag-shopping ml-5 text-2xl bg-yellow-500 p-4 rounded-full"
+                ></i>
+                <input
+                  id="num"
+                  class="absolute top-0 bg-red-500 p-1 rounded-full right-10 w-10 text-center"
+                  value="0"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- Navigation -->
+          <div class="w-[90%] flex m">
+            <nav class="flex justify-center space-x-4">
+              <a
+                href="./PageHome.html"
+                class="font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-500"
+                ><p class="text-white">Home</p></a
+              >
+              <a
+                href="/team"
+                class="font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-500"
+                ><p class="text-white">Product</p></a
+              >
+              <a
+                href="/projects"
+                class="font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-500"
+                ><p class="text-white">Payment</p></a
+              >
+            </nav>
+          </div>
+        </div>
+      </div>
+      <!-- Body -->
+      <div class="items-center justify-between flex flex-col space-y-16">
+        <!-- Picture and detail -->
+        <div
+          class="flex items-center justify-between space-x-10 w-[90%] lg:w-[50%] sm:flex-col lg:flex-row sm:space-y-10"
+        >
+          <!-- Picture -->
+          <div class="flex flex-col">
+            <img class="border-2 border-gray-200 px-5 IMG" alt="picPc" />
+          </div>
+
+          <!-- Detail Picture -->
+          <div>
+            <h1 class="font-bold text-xl name"></h1>
+
+            <div class="flex space-x-5 text-gray-400">
+              <!--  5  star -->
+              <ul>
+                <li class="fa-regular fa-star"></li>
+                <li class="fa-regular fa-star"></li>
+                <li class="fa-regular fa-star"></li>
+                <li class="fa-regular fa-star"></li>
+                <li class="fa-regular fa-star"></li>
+              </ul>
+              <p>0 reviews</p>
+              <p><span class="fa-solid fa-pencil"></span> Write a review</p>
+            </div>
+            <!-- Brand / Code / Price -->
+            <div
+              class="flex space-x-5 border-b-2 border-t-2 py-4 my-4 border-gray-200"
+            >
+              <div>
+                <p class="font-semibold">Brand :</p>
+                <p class="font-semibold">Product Code :</p>
+                <p class="font-bold text-xl mt-3 price"></p>
+              </div>
+              <div>
+                <p class="font-semibold brand"></p>
+                <p class="font-semibold code"></p>
+              </div>
+            </div>
+            <!-- Qty Add To Cart -->
+            <div>
+              <div class="flex items-center justify-between">
+                <div class="flex space-x-4">
+                  <p class="font-semibold">Qty</p>
+                  <input
+                    id="qty"
+                    type="text"
+                    value=""
+                    placeholder="0"
+                    maxlength="3"
+                    class="w-10 text-center border-2 focus:border-black rounded-sm"
+                  />
+                </div>
+                <button
+                  class="bg-yellow-400 text-white add px-2 py1 rounded-md"
+                >
+                  ADD TO CART
+                </button>
+              </div>
+              <p class="font-semibold mt-3">
+                <span class="fa-solid fa-heart"></span>
+                Add to Wish List
+                <span class="fa-solid fa-right-left px-4"></span> Compare this
+                Product
+              </p>
+            </div>
+            <!-- Under Picture Detail -->
+          </div>
+        </div>
+        <!-- Under Picture and detail -->
+        <div class="flex items-start justify-center w-[90%] flex-col">
+          <div class="flex justify-center items-center space-x-5">
+            <p class="p-2 bg-gray-700 text-white font-bold rounded-sm">
+              DESCRIPTION
+            </p>
+            <p class="text-gray-400 font-bold">REVIEWS (0)</p>
+          </div>
+          <hr class="bg-gray-300 h-[1px] w-full mb-5" />
+          <div class="flex flex-col space-y-10">
+            <h1 class="text-lg bg-yellow-300 detail"></h1>
+            <p class="subDetail"></p>
+            <p class="subSubDetail"></p>
+            <p class="footer"></p>
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <div class="bg-black flex items-center h-full justify-center">
+        <div class="flex justify-around w-full items-center">
+          <img class="IMGLogo" alt="Logo" />
+          <div class="text-white">
+            Contact Us <br />
+            Tel : <span class="tel"></span>
+            <br />
+            Address : <span class="address"></span>
+            <br />
+            Location :
+            <span class="location"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Jquery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+      integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- -------------------------------------- -->
+    <script>
+      $(document).ready(function () {
+        let num_checkout = 0;
+        let Web_Detail = {
+          logoImg:
+            "https://www.goldonecomputer.com/image/catalog/Icon%20and%20Logo/Gold%20One%20New%20Logo-1.png",
+          search: { textInSearch: "Search Product", btnSearch: "Search" },
+          tel: "012-345-678",
+          contact: {
+            address: "RUPP",
+            location: "Googlemaps.RUPP.com.kh",
+          },
+        };
+        let product_Detail = {
+          name: "Macbook PRO 6 (M2 PRO / 16 GM / SSD 1TM / 16.2",
+          image:
+            "https://www.goldonecomputer.com/image/cache/catalog/Apple/2023/MacBook-Pro-M2-16-Grey-330x409.jpg",
+          reviews: 0,
+          brand: "Apple",
+          code: "Mac Pro M2",
+          price: "$ 2,989.00",
+          detail: {
+            detail: " FREE: Sleeve, Mouse Wireless, Flash 32GB, Mouse Pad.",
+            subDetail: `-CPU: Apple M2 Pro with 12-core CPU, 19-core GPU, 16-core Neural Engine $
+                  -RAM: 16GB Unified -Storage: SSD 1TB
+                  -Display: 16.2" Liquid Retina XDR Display`,
+            subSubDetail: `  -Wi-Fi 6
+                  -Bluetooth 5
+                  -Weigh : 2.2Kg
+                  -OS: MacOS
+                  -Color: Grey and Silver`,
+
+            footer: ` Warranty - 1-year hardware
+                  - (No warranty for screen, battery, keyboard, fan & speaker, adapter)`,
+          },
+        };
+        // website
+        $(".IMGLogo").attr("src", Web_Detail.logoImg);
+        $(".InputSearch").attr("placeholder", Web_Detail.search.textInSearch);
+        $(".btnSearch").text(Web_Detail.search.btnSearch);
+        $(".tel").text(Web_Detail.tel);
+        $(".address").text(Web_Detail.contact.address);
+        $(".location").text(Web_Detail.contact.location);
+
+        // value in product
+        $(".brand").text(product_Detail.brand);
+        $(".code").text(product_Detail.code);
+        $(".price").text(product_Detail.price);
+        $(".IMG").attr("src", product_Detail.image);
+        $(".name").text(product_Detail.name);
+        $(".detail").text(product_Detail.detail.detail);
+        $(".subDetail").text(product_Detail.detail.subDetail);
+        $(".subSubDetail").text(product_Detail.detail.subSubDetail);
+        $(".footer").text(product_Detail.detail.footer);
+        // ============================================
+        // event
+        $(".add").click(function () {
+          num_checkout++;
+          $("#num").val($("#qty").val());
+        });
+      });
+    </script>
   </body>
 </html>
